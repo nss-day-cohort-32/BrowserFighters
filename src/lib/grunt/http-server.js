@@ -1,11 +1,11 @@
 module.exports = {
   dev: {
-    root: "./../../public/",
+    root: "../../public/",
     port: 8080,
     showDir: false,
     autoIndex: true,
     ext: "html",
     runInBackground: true,
-    openBrowser: false
+    openBrowser: true
   }
 };

@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   scripts: {
-    files: ["./scripts/**/*.js"],
+    files: ["./../scripts/**/*.js"],
     tasks: ["eslint", "browserify"],
     options: {
       spawn: false,
@@ -11,7 +11,7 @@ module.exports = {
     }
   },
   styles: {
-    files: ["public/styles/**/*.css"],
+    files: ["../../public/styles/*.css"],
     options: {
       livereload: true
     }
@@ -20,6 +20,6 @@ module.exports = {
     options: {
       livereload: true
     },
-    files: ["**/*.html"]
+    files: ["../../public/*.html"]
   }
 };

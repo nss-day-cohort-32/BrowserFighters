@@ -22,7 +22,7 @@ module.exports = {
     }
   },
   app: {
-    src: ["../scripts/main.js"],
+    src: ["./../scripts/main.js"],
     dest: "../../public/bundle.js"
   }
 };
