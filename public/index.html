@@ -6,28 +6,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="styles/styles.css" type="text/css" />
 </head>
 
 <body>
 
-  <div id="loginDiv">
-    <h1>Welcome to Nutshell</h1>
-    <fieldset id="loginField">
-      <section class="sectionName">
-        <label for="usernameInput">Username</label>
-        <input id="usernameInput" class="input" type="text">
-      </section>
-      <section class="sectionName">
-        <label for="passwordInput">Password</label>
-        <input id="passwordInput" class="input" type="password">
-      </section>
-      <section class="sectionBtn">
-        <button id="login_btn" class="loginBtn">Login</button>
-        <button id="registrationBtn" class="loginBtn">New User?</button>
-      </section>
-    </fieldset>
-  </div>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Nutshell</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Friends <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Friends</a></li>
+            <li><a href="#">Add Friends</a></li>
+            <li><a href="#">Search</a></li>
+          </ul>
+        </li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Events</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article id="article">
+    <div id="loginDiv">
+      <h1>Welcome to Nutshell</h1>
+      <fieldset id="loginField">
+        <section class="sectionName">
+          <label for="usernameInput">Username</label>
+          <input id="usernameInput" class="input" type="text">
+        </section>
+        <section class="sectionName">
+          <label for="passwordInput">Password</label>
+          <input id="passwordInput" class="input" type="password">
+        </section>
+        <section class="sectionBtn">
+          <button id="login_btn" class="loginBtn">Login</button>
+          <button id="registrationBtn" class="loginBtn">New User?</button>
+        </section>
+      </fieldset>
+    </div>
+  </article>
 
   <footer id="footer"></footer>
 

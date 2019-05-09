@@ -1,6 +1,7 @@
 import { API } from "./apiCalls";
 
 let loginBtn = document.querySelector("#login_btn");
+let regBtn = document.querySelector("#registrationBtn");
 let usernameInput = document.querySelector("#usernameInput");
 let passwordInput = document.querySelector("#passwordInput");
 
@@ -18,4 +19,8 @@ module.exports.login = loginBtn.addEventListener("click", function () {
     });
 });
 
-module.exports.task = console.log("tasks");
+module.exports.register = regBtn.addEventListener("click", function(){
+    console.log("clicked register button");
+});
+
+
