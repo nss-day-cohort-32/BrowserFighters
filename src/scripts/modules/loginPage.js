@@ -14,8 +14,7 @@ module.exports.login = loginBtn.addEventListener("click", function () {
     console.log("you clicked me");
     API.getUsers().then(users => {
         let current = users.find(isUser);
+        sessionStorage.setItem(`${current.user_name}`, `${current.id}`);
         console.log(`You've logged in as ${current.user_name}`);
     });
 });
-
-module.exports.task = console.log("tasks");
