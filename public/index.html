@@ -10,18 +10,26 @@
 </head>
 
 <body>
-  <h1>Welcome to Nutshell</h1>
 
   <div id="loginDiv">
+    <h1>Welcome to Nutshell</h1>
     <fieldset id="loginField">
-      <input class="input" placeholder="Username" type="text">
-      <input class="input" placeholder="Password" type="text">
-      <section id="btnSection">
+      <section class="sectionName">
+        <label for="usernameInput">Username</label>
+        <input id="usernameInput" class="input" type="text">
+      </section>
+      <section class="sectionName">
+        <label for="passwordInput">Password</label>
+        <input id="passwordInput" class="input" type="password">
+      </section>
+      <section class="sectionBtn">
         <button class="loginBtn">Login</button>
         <button class="loginBtn">New User?</button>
       </section>
     </fieldset>
   </div>
+
+  <footer id="footer"></footer>
 
   <script src="./bundle.js"></script>
   <script src="http://localhost:35729/livereload.js"></script>

@@ -5,6 +5,12 @@
             "email_address": "addam.joor@outlook.com",
             "user_name": "addam.joor",
             "password": "abcxyz"
+        },
+        {
+            "id": 2,
+            "email_address": "hughes@something.com",
+            "user_name": "hughes",
+            "password": "hughesPass"
         }
     ]
 }
