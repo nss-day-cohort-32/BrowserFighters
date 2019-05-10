@@ -1,9 +1,9 @@
 import {test} from "./modules/test";
 import {API} from "./modules/apiCalls";
 import {login} from "./modules/loginPage";
-import {task} from "./modules/loginPage";
+import {tasksButton} from "./modules/tasks.js";
 
-task;
+tasksButton;
 login;
 test();
 
