@@ -1,12 +1,26 @@
+body {
+    background-color: steelblue;
+    font-family: 'Crimson Text', serif;
+    font-size: 18px;
+}
+
+.hide {
+    display: none;
+}
+
 h1 {
-    color: steelblue;
+    color: goldenrod;
     text-align: center;
+    text-decoration: underline goldenrod;
+    text-shadow: 3px 3px 3px black;
+    margin-bottom: 40px;
 }
 
 #loginDiv {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-content: center;
+    padding: 20px 20px;
 }
 
 #loginField {
@@ -28,12 +42,12 @@ h1 {
 
 .input {
     margin: 10px 0px;
-    width: 70%;
+    width: 90%;
 }
 
 .loginBtn {
-    width: 30%;
-    border: 1px solid black;
+    width: 40%;
+    border: 1px solid goldenrod;
     margin: 8px 8px;
 }
 
@@ -48,7 +62,7 @@ h1 {
 
 #footer {
     height: 50px;
-    background-color: steelblue;
+    background-color: #222222;
     margin-top: 20px;
     width: 100%;
     text-align: center;
@@ -59,7 +73,42 @@ h1 {
 }
 
 #article {
+    align-self: center;
     display: flex;
-    border: black 1px solid;
-    width: 80%;
+    justify-content: center;
+    border: goldenrod 2px solid;
+    width: 700px;
+    background: lightslategray;
+    border-radius: 90px;
+    box-shadow: 4px 4px 4px 4px black;
 }
+
+#welcome {
+    display: flex;
+    justify-content: center;
+}
+
+#gitLink {
+    color: white;
+    margin-top: 8px;
+}
+#gitLink:hover {
+    color: goldenrod;
+}
+
+.navbar-brand {
+    font-size: 2rem;
+}
+
+/* #chatContainer {
+    border: 1px solid black;
+}
+#newsContainer {
+    border: 1px solid black;
+}
+#tasksContainer {
+    border: 1px solid black;
+}
+#friendsContainer {
+    border: 1px solid black;
+} */

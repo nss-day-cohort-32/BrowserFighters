@@ -1,4 +1,4 @@
- module.exports.tasks = console.log("tasks");
+module.exports.tasks = console.log("tasks");
 
 export function getData() {                                                     /* function*/
     const el = document.querySelector("#entryContainer");              /*queryselector targets first element that matches target*/
