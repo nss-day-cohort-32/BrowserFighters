@@ -1,6 +1,12 @@
+/*
+    Author: Addam Joor
+    Name: apiCalls.js
+    Purpose: Handles calls to the database.
+*/
+
 const baseUrl = "http://localhost:8088/users";
 
-module.exports.API = {
+export const API = {
     getUsers: function () {
         return fetch(baseUrl).then(results => results.json());
     },
