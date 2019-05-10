@@ -62,7 +62,6 @@ $RECYCLE.BIN/
 #  Project Files
 #  ******************************************
 
+api/database.json
 src/lib/node_modules
 public/bundle.js
-public/styles/styles.css
-env/*

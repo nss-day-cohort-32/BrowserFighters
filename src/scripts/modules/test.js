@@ -1,4 +1,3 @@
-module.exports.test = function () {
-  console.log("Hello, this function is working modularly.");
-  console.log("Working!!!");
+export const test = function () {
+  console.log("Hello, this test function is working modularly.");
 };
