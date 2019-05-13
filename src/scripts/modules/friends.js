@@ -34,7 +34,7 @@ export function friendSearch() {
                 }
                 console.log(findFriend)
                 let findfriendHtml =`<h2>${findFriend.user_name}</h2>
-                <button>Add Friend</button>`
+                <button id = ${findFriend.id}>Add Friend</button>`
                 console.log(findfriendHtml)
 
                 friendsEl.innerHTML += findfriendHtml
@@ -43,5 +43,7 @@ export function friendSearch() {
         })
     })
 }
+
+
 
 
