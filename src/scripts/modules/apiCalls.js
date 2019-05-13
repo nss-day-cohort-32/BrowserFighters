@@ -1,7 +1,7 @@
 /*
     Author: Addam Joor
     Name: apiCalls.js
-    Purpose: Handles calls to the database.
+    Purpose: Handles calls to the users database.
 */
 
 const baseUrl = "http://localhost:8088/users";
