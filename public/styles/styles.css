@@ -146,8 +146,10 @@ body {
     border: 1px solid black;
 }
 
-/* #chatContainer {
+#chatContainer {
     border: 1px solid black;
+}
+
 #eventsContainer {
     width: 400px;
     height: 400px;
@@ -189,21 +191,24 @@ body {
     margin-top: 10px;
     margin-right: 20px;
 }
+
 #friendsContainer {
     border: 1px solid black;
-} */
-
-.allTasks{
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-border:3px solid black;
     width: 300px;
     height: 805px;
     margin-top: 10px;
     margin-right: 20px;
     background-color: #222222;
+} 
+
+.allTasks{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border:3px solid black;
+    background-color: goldenrod
 }
+
 #friendsContainer h1 {
     color: steelblue;
     text-align: center;
@@ -262,3 +267,10 @@ border:3px solid black;
 #submitChatMessage:hover {
     background-color: lightgreen;
 }
+
+#taskForm {
+    background-color: goldenrod
+
+}
+
+

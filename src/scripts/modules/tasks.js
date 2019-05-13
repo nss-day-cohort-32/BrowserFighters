@@ -1,5 +1,7 @@
-const taskButton = document.querySelector("#tasksContainer");
-export const addTask = document.getElementById("addTaskBtn").addEventListener("click", function(){
+export const addTask = document.getElementById("addTaskBtn").addEventListener("click", function () {
+    console.log("working");
+    const taskButton = document.querySelector("#taskForm");
+
     taskButton.classList.remove("hide");
 });
 // lines 1-5 button nav
@@ -11,12 +13,12 @@ const taskStorage = document.getElementById("tasksCards");
 
 
 
- fetch("http://localhost:8088/tasks")   /* gets data already in database */
-        .then(response => response.json())
-        .then(myParsedTaskData => {
-            myParsedTaskData.forEach(task => {
-                // console.log(task);
-                taskStorage.innerHTML += `
+fetch("http://localhost:8088/tasks")   /* gets data already in database */
+    .then(response => response.json())
+    .then(myParsedTaskData => {
+        myParsedTaskData.forEach(task => {
+            // console.log(task);
+            taskStorage.innerHTML += `
                 <div class="allTasks">              
                  <h3>Task:</h3>
                  <p> ${task.task}</p>
@@ -24,43 +26,47 @@ const taskStorage = document.getElementById("tasksCards");
                  <p>${task.completeDate}</p>
                  </div>
                 `;
-            });
         });
+    });
 
 // lines 7-30 get all tasks
 
 
 const addTaskButton = document.getElementById("taskEntry");
-addTaskButton.addEventListener("click", function(){                 /* starts  function on click */
-     const newTaskInput = document.getElementById("taskInputBox").value;
-     console.log(newTaskInput);
+debugger;
+console.log("add task btn", addTaskButton);
+addTaskButton.addEventListener("click", function () {                 /* starts  function on click */
+
+    console.log("working 2");
+    const newTaskInput = document.getElementById("taskInputBox").value;
+    console.log(newTaskInput);
     //  newTaskInput.createTextNode = "";
 
     const addDate = document.getElementById("datebutton").value;
     console.log(addDate);
-//  making object to be posted to database
-var task = {
-    userId:3,
-    task:newTaskInput,
-    completeDate:addDate,
-    completed:false
-};
+    //  making object to be posted to database
+    var task = {
+        userId: 3,
+        task: newTaskInput,
+        completeDate: addDate,
+        completed: false
+    };
 
- taskStorage.innerHTML=" ";
+    taskStorage.innerHTML = " ";
 
     fetch("http://localhost:8088/tasks", {
-    method: "POST",                                     /* post new data to database */
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify(task)
-}).then(
+        method: "POST",                                     /* post new data to database */
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(task)
+    }).then(
         fetch("http://localhost:8088/tasks")      /* gets new input data */
-        .then(response => response.json())
-        .then(myParsedTaskData => {
-            myParsedTaskData.forEach(task => {
-                // console.log(task);
-                taskStorage.innerHTML += `
+            .then(response => response.json())
+            .then(myParsedTaskData => {
+                myParsedTaskData.forEach(task => {
+                    // console.log(task);
+                    taskStorage.innerHTML += `
                 <div class="allTasks">           
                 <h3>Task:</h3>
                 <p> ${task.task}</p>
@@ -68,7 +74,7 @@ var task = {
                 <p>${task.completeDate}</p>
                 </div>
                 `;
-            });
-        })
+                });
+            })
     );
 });
