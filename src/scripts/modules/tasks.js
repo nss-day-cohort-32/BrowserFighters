@@ -1,53 +1,74 @@
-module.exports.tasks = console.log("tasks");
+const taskButton = document.querySelector("#tasksContainer");
+export const addTask = document.getElementById("addTaskBtn").addEventListener("click", function(){
+    taskButton.classList.remove("hide");
+});
+// lines 1-5 button nav
 
-export function getData() {                                                     /* function*/
-    const el = document.querySelector("#entryContainer");              /*queryselector targets first element that matches target*/
-    el.innerHTML = "";                                              /*empty string*/
-    fetch("http://localhost:3000/entries")                         /*fetch local host*/
+
+// lines 7-30 get all tasks
+
+const taskStorage = document.getElementById("taskDataBase");
+
+
+
+ fetch("http://localhost:8088/tasks")   /* gets data already in database */
         .then(response => response.json())
-        .then(myParsedEntries => {
-            myParsedEntries.forEach(entry => {
-
-
-                console.log(entry.tasks);
-
-                document.querySelector("#entryContainer").innerHTML += `
-            <div class = “domEl”>
-            <h2>Concepts Covered - ${entry.task}</h2>
-            <h2>Date of Entry - ${entry.completeDate}</h2>
-             <hr>
-             </div>
-            `;
+        .then(myParsedTaskData => {
+            myParsedTaskData.forEach(task => {
+                // console.log(task);
+                taskStorage.innerHTML += `
+                <div class="allTasks">              
+                 <h3>Task:</h3>
+                 <p> ${task.task}</p>
+                 <h3>Target Completion Date:</h3>
+                 <p>${task.completeDate}</p>
+                 </div>
+                `;
             });
         });
-}
 
- getData();
-
-
-//  let tasksButton = document.getElementById("newTaskBtn");    /* works console log */
-
-// tasksButton.addEventListener("click", function(){
-//    event.preventDefault();
-//    // const journalEntryContainer = document.getElementById("journalValue");
-//    console.log("new task");
+// lines 7-30 get all tasks
 
 
-// });
-// ----------
+const addTaskButton = document.getElementById("taskEntry");
+addTaskButton.addEventListener("click", function(){                 /* starts  function on click */
+     const newTaskInput = document.getElementById("taskInputBox").value;
+     console.log(newTaskInput);
+    //  newTaskInput.createTextNode = "";
 
-// function journalEntryValue(){         /* pop up form */
-//    let journalInput = document.getElementById("journalValue").value
-//    journalEntryContainer.innerHTML = " "
-//    return journalInput
+    const addDate = document.getElementById("datebutton").value;
+    console.log(addDate);
+//  making object to be posted to database
+var task = {
+    userId:3,
+    task:newTaskInput,
+    completeDate:addDate,
+    completed:false
+};
 
-// function openForm() {
-//    document.getElementById("myForm").style.display = "block";
-//  }
+ taskStorage.innerHTML=" ";
 
-//  function closeForm() {
-//    document.getElementById("myForm").style.display = "none";
-//  }
-
-
-//  console.log("new task");
+    fetch("http://localhost:8088/tasks", {
+    method: "POST",                                     /* post new data to database */
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(task)
+}).then(
+        fetch("http://localhost:8088/tasks")      /* gets new input data */
+        .then(response => response.json())
+        .then(myParsedTaskData => {
+            myParsedTaskData.forEach(task => {
+                // console.log(task);
+                taskStorage.innerHTML += `
+                <div class="allTasks">           
+                <h3>Task:</h3>
+                <p> ${task.task}</p>
+                <h3>Target Completion Date:</h3>
+                <p>${task.completeDate}</p>
+                </div>
+                `;
+            });
+        })
+    );
+});

@@ -99,6 +99,9 @@ h1 {
 .navbar-brand {
     font-size: 2rem;
 }
+#tasksContainer {
+    border: 1px solid black;
+}
 
 /* #chatContainer {
     border: 1px solid black;
@@ -112,3 +115,10 @@ h1 {
 #friendsContainer {
     border: 1px solid black;
 } */
+
+.allTasks{
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+border:3px solid black;
+}

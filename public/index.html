@@ -92,11 +92,24 @@
   <section id="mainContainer">
     <div id="chatContainer"></div>
     <div id="eventsContainer"></div>
-    <div id="tasksContainer"></div>
-    <div id="friendsContainer"></div>
+
+    <!-- <div id="tasksContainer" class="hide"> -->
+    <h1>New Task</h1>
+    <label>Task:</label>
+    <input id="taskInputBox"></input>
+    <label>Completion Date:</label>
+    <input id="datebutton" type="date"></input>
+    <button id="taskEntry" type="submit">Add</button>
+    <h1>Task List</h1>
+    <div id="taskDataBase"></div>
+    <!-- <input type="checkbox"></input> -->
+    <!-- </div> -->
+
+
+    <div id="friendsContainer">
+    </div>
     <div id="currentUserContainer"></div>
   </section>
-
   <footer id="footer">
     <a href="https://github.com/nss-day-cohort-32/BrowserFighters">
       <i id="gitLink" class="fab fa-github fa-2x"></i>
@@ -104,7 +117,13 @@
   </footer>
 
 
-  <!-- <div id="taskDiv">
+
+
+
+
+
+  <!-- 
+  <div id="tasksContainer">
     <h1>Tasks</h1>
     <fieldset id="myForm">
       <section class="sectionName">
