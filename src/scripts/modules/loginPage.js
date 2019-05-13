@@ -4,13 +4,15 @@
     Purpose: Handles login and registration.
 */
 
-import {API} from "./apiCalls";
-import {registerUser} from "./registerUser";
+import { API } from "./apiCalls";
+import { registerUser } from "./registerUser";
+import { buildEventDOM } from "./eventDOM";
 
 let article = document.querySelector("#article");
 let navbar = document.querySelector("nav ul");
 let newUserBtn = document.querySelector("#registrationBtn");
 let loginBtn = document.querySelector("#login_btn");
+let justifyDiv = document.querySelector("#justifyDiv");
 
 let hiddenEmail = document.querySelector("#email");
 let hiddenEmailInput = document.querySelector("#emailInput");
@@ -42,10 +44,14 @@ export const login = loginBtn.addEventListener("click", function () {
             };
             navbar.classList.remove("hide");
             article.classList.add("hide");
+            justifyDiv.classList.remove("hide");
             usernameInput.value = "";
             passwordInput.value = "";
-            sessionStorage.setItem(`${current.user_name}`, `${current.id}`);
+            sessionStorage.setItem("user_id", `${current.id}`);
             console.log(`You've logged in as ${current.user_name}`);
+            fetch("http://localhost:8088/events").then(results => results.json()).then(events => {
+                events.forEach(event => buildEventDOM(event));
+            });
         });
     }
     else if (hiddenEmailInput.value !== "" && hiddenUsernameInput.value === usernameInput.value && hiddenPassInput.value === passwordInput.value) {
