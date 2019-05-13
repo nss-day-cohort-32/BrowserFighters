@@ -58,7 +58,7 @@
   <div id="welcome">
     <article id="article">
       <div id="loginDiv">
-        <h1>Welcome to Nutshell</h1>
+        <h1 id="mainHeader">Welcome to Nutshell</h1>
         <fieldset id="loginField">
           <section id="email" class="sectionName hide">
             <label for="emailInput">Email Address</label>
@@ -89,36 +89,43 @@
     </article>
   </div>
 
-  <section id="mainContainer">
-    <div id="chatContainer"></div>
-    <div id="eventsContainer"></div>
-    <div id="tasksContainer"></div>
-    <div id="friendsContainer"></div>
-    <div id="currentUserContainer"></div>
-  </section>
+  <div id="justifyDiv" class="hide">
+
+    <section id="friendsContainer">
+      <div id="friendsCardContainer">
+        <h1>Your Friends</h1>
+      </div>
+    </section>
+
+    <section id="mainContainer">
+      <article id="chatContainer">
+        <div id="chatInputDiv">
+          <input id="statusInput" placeholder="  Post your new message" type="text">
+          <button id="submitChatMessage">Submit</button>
+        </div>
+        <div id="chatDisplayDiv"></div>
+      </article>
+
+      <section>
+        <div id="eventsContainer">
+          <h1>Your Events</h1>
+          <div id="eventsCards"></div>
+        </div>
+
+          <div id="tasksContainer">
+            <h1 id="tasksHead">Your Tasks</h1>
+            <div id="tasksCards"></div>
+          </div>
+      </section>
+
+    </section>
+  </div>
 
   <footer id="footer">
     <a href="https://github.com/nss-day-cohort-32/BrowserFighters">
       <i id="gitLink" class="fab fa-github fa-2x"></i>
     </a>
   </footer>
-
-
-  <!-- <div id="taskDiv">
-    <h1>Tasks</h1>
-    <fieldset id="myForm">
-      <section class="sectionName">
-        <div id="entryContainer"></div>
-        <button id="newTaskBtn">New Task</button>
-
-        <input type="checkbox" id="myCheck" onclick="myFunction()">
-
-        <h1></h1>
-        <label for="taskDate"></label>
-        <input type="date" name="taskDate" id="taskDate">
-      </section>
-
-  </div> -->
 
   <script src="./bundle.js"></script>
   <script src="http://localhost:35729/livereload.js"></script>
