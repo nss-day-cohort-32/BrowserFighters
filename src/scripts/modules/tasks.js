@@ -7,7 +7,7 @@ export const addTask = document.getElementById("addTaskBtn").addEventListener("c
 
 // lines 7-30 get all tasks
 
-const taskStorage = document.getElementById("taskDataBase");
+const taskStorage = document.getElementById("tasksCards");
 
 
 
