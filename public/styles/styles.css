@@ -24,7 +24,7 @@ body {
     margin-right: 0px;
     margin-top: 10px;
     display: flex;
-    height: 800px;
+    height: 740px;
 }
 
 #chatContainer {
@@ -37,7 +37,7 @@ body {
 #chatInputDiv {
     display: flex;
     justify-content: center;
-    padding-bottom: 10px;
+    padding-top: 10px;
 }
 #chatDisplayDiv {
     height: 94%;
@@ -279,3 +279,23 @@ body {
 }
 
 
+.chat_name {
+    text-decoration: underline black;
+    font-size: 2.4rem;
+    color: navy;
+}
+
+#logout {
+    padding-right: 20px;
+}
+
+#chatEdit {
+    margin-right: 10px;
+    color: steelblue;
+    border: 1px solid steelblue;
+}
+
+#chatDelete {
+    color: red;
+    border: 1px solid red;
+}

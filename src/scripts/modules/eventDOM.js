@@ -3,17 +3,20 @@
     Name: eventDOM.js
     Purpose: Handles the rendering of events to the DOM.
 */
+import {createEventEdit} from "./eventEditor";
 
 function renderEventEntries() {
     fetch("http://localhost:8088/events")
         .then(results => results.json()).then(entries => {
             entries.forEach(event => {
-                buildEventDOM(event);
+                console.log("event.userID", event.userId);
+                    buildEventDOM(event);
             });
         });
 };
 
 export function buildEventDOM(event) {
+    if(event.userId === parseInt(sessionStorage.getItem("user_id"))){
     let formattedDate = new Date(event.date);
     const month = formattedDate.toLocaleString("en-us", { month: "long" });
     let dateFormat = event.date.split("-");
@@ -38,6 +41,7 @@ export function buildEventDOM(event) {
     editBtn.textContent = "Edit Event";
     editBtn.addEventListener("click", () => {
         console.log(`Edit this Event: Event ${event.id}`);
+        createEventEdit(event);
     });
     let deleteBtn = document.createElement("button");
     deleteBtn.setAttribute("class", "delete_btn");
@@ -64,4 +68,4 @@ export function buildEventDOM(event) {
     eventCard.appendChild(editBtn);
     eventCard.appendChild(deleteBtn);
     eventsContainer.appendChild(eventCard);
-};
+}};
