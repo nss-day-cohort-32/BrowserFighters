@@ -33,6 +33,7 @@ function isUser(user) {
     }
 };
 
+
 export const login = loginBtn.addEventListener("click", function () {
     if (hiddenEmailInput.value === "") {
         API.getUsers().then(users => {

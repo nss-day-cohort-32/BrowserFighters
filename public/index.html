@@ -122,18 +122,33 @@
 
         <div id="tasksContainer">
           <h1 id="tasksHead">Your Tasks</h1>
+
+          <div id="taskForm" class="hide">
+            <h1>New Task</h1>
+            <center><label>Task:</label></center>
+            <center><input id="taskInputBox"></input></center>
+            <center><label>Completion Date:</label></center>
+            <center><input id="datebutton" type="date"></input></center>
+            <center><button id="taskEntry" type="submit">Add</button></center>
+            <h1>Task List</h1>
+            <div id="taskDataBase"></div>
+            <!-- <input type="checkbox"></input> -->
+          </div>
           <div id="tasksCards"></div>
+
         </div>
-      </section>
-
-    </section>
   </div>
+  </section>
 
-  <footer id="footer">
-    <a href="https://github.com/nss-day-cohort-32/BrowserFighters">
-      <i id="gitLink" class="fab fa-github fa-2x"></i>
-    </a>
-  </footer>
+  </section>
+  </div>
+  <div>
+    <footer id="footer">
+      <a href="https://github.com/nss-day-cohort-32/BrowserFighters">
+        <i id="gitLink" class="fab fa-github fa-2x"></i>
+      </a>
+    </footer>
+  </div>
 
   <script src="./bundle.js"></script>
   <script src="http://localhost:35729/livereload.js"></script>

@@ -1,0 +1,97 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email_address": "addam.joor@outlook.com",
+      "user_name": "addam.joor",
+      "password": "abcxyz"
+    },
+    {
+      "id": 2,
+      "email_address": "hughes@something.com",
+      "user_name": "hughes",
+      "password": "hughesPass"
+    },
+    {
+      "id": 3,
+      "email_address": "JMetts@somtheing.com",
+      "user_name": "jmetts",
+      "password": "1234"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": 1,
+      "task": "Chore 1",
+      "completeDate": "May 2020",
+      "completed": false
+    },
+    {
+      "userId": 3,
+      "task": "Home Depot",
+      "completeDate": "2019-05-13",
+      "completed": false,
+      "id": 2
+    },
+    {
+      "userId": 3,
+      "task": "test",
+      "completeDate": "2019-05-14",
+      "completed": false,
+      "id": 3
+    },
+    {
+      "userId": 3,
+      "task": "test",
+      "completeDate": "2019-05-14",
+      "completed": false,
+      "id": 4
+    },
+    {
+      "userId": 3,
+      "task": "test",
+      "completeDate": "2019-05-15",
+      "completed": false,
+      "id": 5
+    },
+    {
+      "userId": 3,
+      "task": "test",
+      "completeDate": "2019-05-15",
+      "completed": false,
+      "id": 6
+    }
+  ],
+  "news": [
+    {
+      "id": 1,
+      "userId": 2,
+      "title": "Trump Stuff",
+      "synopsis": "Silliness abound."
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": 1,
+      "name": "Concert 1",
+      "date": "May 2019",
+      "location": "Nashville"
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "sender": "userId of sender",
+      "receiver": "userId of receiving"
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": 1,
+      "content": "Something pointless probably"
+    }
+  ]
+}
