@@ -48,6 +48,7 @@ export const login = loginBtn.addEventListener("click", function () {
             usernameInput.value = "";
             passwordInput.value = "";
             sessionStorage.setItem("user_id", `${current.id}`);
+            sessionStorage.setItem("user_name", `${current.user_name}`)
             console.log(`You've logged in as ${current.user_name}`);
             fetch("http://localhost:8088/events").then(results => results.json()).then(events => {
                 events.forEach(event => buildEventDOM(event));

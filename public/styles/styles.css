@@ -249,3 +249,10 @@ body {
 #submitChatMessage:hover {
     background-color: lightgreen;
 }
+.friend_Card {
+color: lightgreen;
+}
+
+#potentialFriend {
+    color: lightgreen;
+}
