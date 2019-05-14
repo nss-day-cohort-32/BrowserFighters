@@ -5,6 +5,7 @@
 */
 
 const baseUrl = "http://localhost:8088/users";
+const baseUrl2 = "http://localhost:8088/friends";
 
 export const API = {
     getUsers: function () {
@@ -42,6 +43,15 @@ export const API = {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(userObject)
+        }).then(response => response.json());
+    },
+    addNewFriend: function (newFriendObject) {
+        return fetch(baseUrl2, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newFriendObject)
         }).then(response => response.json());
     }
 };

@@ -249,6 +249,13 @@ body {
 #submitChatMessage:hover {
     background-color: lightgreen;
 }
+.friend_Card {
+color: lightgreen;
+}
+
+#potentialFriend {
+    color: lightgreen;
+}
 .chat_name {
     text-decoration: underline black;
     font-size: 2.4rem;
