@@ -9,6 +9,8 @@ import {addEventForm} from "./modules/addEvents";
 import {buildEventDOM} from "./modules/eventDOM";
 import {renderChatEntries} from "./modules/chatDOM";
 
+
+
 renderChatEntries();
 regBtn;
 tasksButton;
@@ -17,6 +19,7 @@ test();
 addEventForm;
 // createNewTask;
 addTask;
+
 
 
 API.getUsers().then(entries => console.log("entries and stuff", entries));

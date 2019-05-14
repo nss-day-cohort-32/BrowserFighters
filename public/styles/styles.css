@@ -103,7 +103,7 @@ body {
     display: flex;
     justify-content: center;
 }
-
+  
 #footer {
     height: 50px;
     background-color: #222222;
@@ -112,7 +112,7 @@ body {
     text-align: center;
     justify-content: center;
     align-content: center;
-    position: absolute;
+    position: absolutefi;
     bottom: 0;
 }
 
@@ -181,7 +181,7 @@ body {
     text-align: center;
     text-decoration: underline steelblue;
     text-shadow: 1px 1px 1px black;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */          /*fix for floating footer on JM Tasks */
 }
 
 #currentUserContainer{
@@ -271,6 +271,11 @@ body {
 #taskForm {
     background-color: goldenrod
 
+}
+#taskEdit_button {                 /* jm task */      
+    border: black 1px solid;
+    margin-top: 40px;
+    color: steelblue;
 }
 
 
