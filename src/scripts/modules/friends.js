@@ -8,9 +8,8 @@ export function friendSearch() {
 
         const searchFriends = document.createElement("input");
         searchFriends.setAttribute("class", "searchFriend");
-        searchFriends.setAttribute("placeholder", "Search Friends")
+        searchFriends.placeholder ="Search Friends"
         console.log("searchFriends", searchFriends)
-        searchFriends.value = "Search Friends";
         document.getElementById("friendsContainer").appendChild(searchFriends);
 
         const searchFriendsButton = document.createElement("button")
@@ -31,9 +30,8 @@ export function friendSearch() {
                         findFriend = friend
                         break
                     }
-                    else {
-                        alert("user not found");
-                    }
+                } if (findFriend === undefined) {
+                    alert("user not found!")
                 }
                 console.log(findFriend)
                 let findfriendHtml = `<h2 id = "potentialFriend">${findFriend.user_name}</h2>
