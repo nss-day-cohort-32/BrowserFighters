@@ -3,15 +3,43 @@
     Name: chatDOM.js
     Purpose: Handles the rendering of chat messages to the DOM.
 */
+const chatDisplay = document.querySelector("#chatDisplayDiv");
 
 export function renderChatEntries() {
     fetch("http://localhost:8088/messages")
         .then(results => results.json()).then(messages => {
             messages.forEach(message => {
-                console.log("Chat board", message);
                 buildChatDOM(message);
             });
         });
+};
+
+function editChatEntry(message) {
+    var messagePrompt = prompt(`Edit entry ${message.id}, Originally posted ${message.timestamp}:`, `${message.content}`);
+    if (messagePrompt == null || messagePrompt == "") {
+        alert("cancelled edit");
+    }
+    else {
+        let newMessageObj = {
+            userId: message.userId,
+            timestamp: message.timestamp,
+            content: messagePrompt,
+            user_name: message.user_name
+        }
+        fetch(`http://localhost:8088/messages/${message.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newMessageObj)
+        }).then(response => response.json())
+            .then(() => fetch("http://localhost:8088/messages")
+                .then(results => results.json()))
+            .then(messages => {
+                chatDisplay.innerHTML = "";
+                messages.forEach(message => buildChatDOM(message));
+            });
+    }
 };
 
 document.querySelector("#submitChatMessage").addEventListener("click", () => {
@@ -23,7 +51,8 @@ document.querySelector("#submitChatMessage").addEventListener("click", () => {
     const newChatObj = {
         userId: parseInt(sessionStorage.getItem("user_id")),
         timestamp: formattedTime,
-        content: chatInput.value
+        content: chatInput.value,
+        user_name: sessionStorage.getItem("user_name")
     };
     fetch("http://localhost:8088/messages", {
         method: "POST",
@@ -38,7 +67,9 @@ document.querySelector("#submitChatMessage").addEventListener("click", () => {
             chatContainer.innerHTML = "";
             chatInput.value = "";
             console.log("new messages array", messages);
-            messages.forEach(message => buildChatDOM(message));
+            messages.forEach(message => {
+                buildChatDOM(message);
+            });
         });
 });
 
@@ -50,16 +81,24 @@ export function buildChatDOM(message) {
     chatCard.setAttribute("class", "message_card");
     // build event details
     let chatDetails = document.createElement("div");
-    chatDetails.innerHTML = `<h3><span>${message.userId}</span>: ${message.content}</h3>
+    chatDetails.addEventListener("click", () => {
+        if (message.user_name !== sessionStorage.getItem("user_name")) {
+            console.log(`Add ${message.user_name} as a friend?`)
+        }
+    })
+    chatDetails.innerHTML = `<h3><span class="chat_name">${message.user_name}</span>: ${message.content}</h3>
                             <p>${message.timestamp}</p>`;
     let editBtn = document.createElement("button");
-    editBtn.setAttribute("class", "chat_edit_btn");
+    editBtn.setAttribute("class", "btn btn-outline-primary btn-sm");
+    editBtn.setAttribute("id", "chatEdit");
     editBtn.textContent = "Edit";
     editBtn.addEventListener("click", () => {
         console.log("Edit this Message");
+        editChatEntry(message);
     });
     let deleteBtn = document.createElement("button");
-    deleteBtn.setAttribute("class", "chat_delete_btn");
+    deleteBtn.setAttribute("class", "btn btn-outline-danger btn-sm");
+    deleteBtn.setAttribute("id", "chatDelete");
     deleteBtn.textContent = "Delete";
     deleteBtn.addEventListener("click", () => {
         let result = confirm(`Are you sure you want to delete Message ${message.id}?`);
@@ -79,7 +118,9 @@ export function buildChatDOM(message) {
         }
     });
     chatCard.appendChild(chatDetails);
-    chatCard.appendChild(editBtn);
-    chatCard.appendChild(deleteBtn);
+    if (message.user_name == sessionStorage.getItem("user_name")) {
+        chatCard.appendChild(editBtn);
+        chatCard.appendChild(deleteBtn);
+    }
     chatContainer.appendChild(chatCard);
 };

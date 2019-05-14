@@ -52,6 +52,11 @@
           </ul>
         </li>
       </ul>
+      <ul id="logout" class="nav navbar-nav navbar-right">
+        <li class="nav navbar-nav navbar-right">
+          <a id="logout_btn" class="dropdown-toggle hide" data-toggle="dropdown" href="#">Logout</a>
+        </li>
+      </ul>
     </div>
   </nav>
 
@@ -92,18 +97,18 @@
   <div id="justifyDiv" class="hide">
 
     <section id="friendsContainer">
+      <h1>Your Friends</h1>
       <div id="friendsCardContainer">
-        <h1>Your Friends</h1>
       </div>
     </section>
 
     <section id="mainContainer">
       <article id="chatContainer">
+        <div id="chatDisplayDiv"></div>
         <div id="chatInputDiv">
           <input id="statusInput" placeholder="  Post your new message" type="text">
           <button id="submitChatMessage">Submit</button>
         </div>
-        <div id="chatDisplayDiv"></div>
       </article>
 
       <section>
@@ -112,10 +117,10 @@
           <div id="eventsCards"></div>
         </div>
 
-          <div id="tasksContainer">
-            <h1 id="tasksHead">Your Tasks</h1>
-            <div id="tasksCards"></div>
-          </div>
+        <div id="tasksContainer">
+          <h1 id="tasksHead">Your Tasks</h1>
+          <div id="tasksCards"></div>
+        </div>
       </section>
 
     </section>
