@@ -9,11 +9,9 @@ import {logout} from "./modules/logout";
 
 
 
-renderChatEntries();
 regBtn;
 tasksButton;
 login;
-test();
 addEventForm;
 // createNewTask;
 addTask;
